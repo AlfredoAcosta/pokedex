@@ -1,10 +1,11 @@
 import React from 'react'
-import './Content.css'
+// import './Content.css'
+import Characters from './Characters'
 
 export default function Content() {
   return (
-    <section className='Content'>
-      <h2>(Here are gonna live Pokemons)</h2>
-    </section>
+    <div>
+      <Characters/>
+    </div>
   )
 }
