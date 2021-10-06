@@ -13,7 +13,7 @@ export const Sprites = ({ pokemonName }) => {
   return (
     <div>
       {`Hello ${pokemonName}`}
-      <img src={sprites.sprites.front_default} />
+      <img src={sprites.sprites.front_default} alt="PokemonImg"/>
     </div>
   )
 }
