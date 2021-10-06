@@ -1,11 +1,23 @@
 .background {
-    background-color: #A9E4D7;
+    /* background-color: #A9E4D7;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 400px);
-
+    grid-template-rows: repeat(5, 400px); */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: center;
 }
 
 .contents {
   display: contents;
+}
+
+.text {
+  padding: 0 20px 20px;
+}
+
+article {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
 }
