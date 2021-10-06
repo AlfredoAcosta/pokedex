@@ -8,12 +8,16 @@ export const Sprites = ({ pokemonName }) => {
       .then(response => response.json())
       .then(data => setSprites(data))
   ), []);
+
   console.log('sprites: ', sprites);
 
   return (
     <div>
       {`Hello ${pokemonName}`}
-      <img src={sprites.sprites.front_default} alt="PokemonImg"/>
+      {sprites?.sprites
+        ? <img src={sprites?.sprites?.front_default} alt="PokemonImg"/>
+        : <p>Loading...</p>
+      }
     </div>
   )
 }
