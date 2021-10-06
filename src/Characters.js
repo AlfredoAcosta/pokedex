@@ -16,12 +16,13 @@ const Characters = () => {
   return(
     <div className='contents'>
       {characters.map(character => (
-        //  <article>
-        //    <div className='text'>
-        //      <h3>{character.name}</h3>
-        //    </div>
-        //  </article>
-       <Sprites pokemonName={character.name} />
+          <article>
+            <Sprites pokemonName={character.name} />
+            <div className='text'>
+              <h3>{character.name}</h3>
+            </div>
+          </article>
+       // <Sprites pokemonName={character.name} />
         // <h2>{ character.name }</h2>
       ))}
     </div>

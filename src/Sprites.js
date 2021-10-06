@@ -12,7 +12,6 @@ export const Sprites = ({ pokemonName }) => {
   return (
     //console.log({sprites.sprites.back_default})
     <div>
-      {`Hello ${pokemonName}`}
       {sprites?.sprites
         ? <img src={sprites?.sprites?.front_default} alt="PokemonImg"/>
         : <p>Loading...</p>
