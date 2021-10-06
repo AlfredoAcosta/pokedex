@@ -13,7 +13,10 @@ export const Sprites = ({ pokemonName }) => {
     //console.log({sprites.sprites.back_default})
     <div>
       {`Hello ${pokemonName}`}
-      <img src={sprites.sprites.back_default} alt="PokemonImg"/>
+      {sprites?.sprites
+        ? <img src={sprites?.sprites?.front_default} alt="PokemonImg"/>
+        : <p>Loading...</p>
+      }
     </div>
   )
 }
