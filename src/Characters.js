@@ -3,6 +3,7 @@ import './Content.css'
 
 // Components
 import { Sprites } from './Sprites';
+import { Location } from "./Location";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -19,11 +20,15 @@ const Characters = () => {
           <article>
             <Sprites pokemonName={character.name} />
             <div className='text'>
-              <h3>{character.name}</h3>
+              {<h3>{character.name}</h3>}
             </div>
+            <div>
+              <button></button>
+            </div>
+
+            {/* <Location pokemonName={character.name} /> */}
+
           </article>
-       // <Sprites pokemonName={character.name} />
-        // <h2>{ character.name }</h2>
       ))}
     </div>
   )
