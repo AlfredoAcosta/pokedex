@@ -1,30 +1,39 @@
 import React, { useEffect, useState } from 'react';
 
+// Utils
+import { fetchData } from './utils';
+
 export const Sprites = ({ pokemonName }) => {
   const [sprites, setSprites] = useState([]);
 
-  useEffect(() => (
-    fetch(`https://pokeapi.co/api/v2/pokemon-form/${pokemonName}`)
-      .then(response => response.json())
-      .then(data => setSprites(data))
-  ), []);
+ const [selected, setSelected] = useState('front_default')
 
-  console.log(pokemonName)
+  useEffect(() => (
+    fetchData(`https://pokeapi.co/api/v2/pokemon-form/${pokemonName}`, setSprites)
+  ), [pokemonName]);
+
+  const onChangeImg = () => {
+    if (selected === 'front_default') {
+      setSelected('back_default');
+    } else {
+      setSelected('front_default');
+    }
+  }
 
   return (
-    //console.log({sprites.sprites.back_default})
     <div>
-      {sprites?.sprites
-        ?
-          <img src={sprites?.sprites?.back_default} alt="PokemonImg"/>
-        : <p>Loading...</p>
-      }
+      <img class="center" src={sprites?.sprites?.[selected]} alt="PokemonImg" />
 
-      {sprites?.version_group
+      {/* {sprites?.version_group
         ?
-          <img src={sprites?.sprites?.front_default} alt="PokemonImg"/>
+          profiles.back_profile
         : <p>Loading...</p>
-      }
+      } */}
+
+      <div>
+        <button onClick={onChangeImg} class="myButton">Rotate</button>
+      </div>
+
     </div>
   )
 }

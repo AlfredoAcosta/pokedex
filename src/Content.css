@@ -21,3 +21,11 @@ article {
 nav{
   padding: 1.3em;
 }
+
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
